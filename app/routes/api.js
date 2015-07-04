@@ -88,7 +88,7 @@ module.exports = function (app, middleware) {
                     res.send(err);
                 }
 
-                if (req.user._id !== kanji.user) {
+                if (JSON.stringify(req.user._id) !== JSON.stringify(kanji.user)) {
                     res.send({
                         error: "Cannot modify unowned kanji"
                     });
