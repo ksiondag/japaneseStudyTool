@@ -10,28 +10,30 @@ module.exports = function (app, passport) {
 
     // process the login form
     app.post('/login', passport.authenticate('local-login', {
-        successRedirect : '/flashcard',
-        failureRedirect : '/login',
+        successRedirect : '/japanese/flashcard',
+        failureRedirect : '/japanese/login',
         failureFlash : true
     }));
 
     // SIGNUP
     // show the signup form
+    /*
     app.get('/signup', function(req, res) {
         res.render('signup.ejs', { message: req.flash('signupMessage') });
     });
 
     // process the signup form
     app.post('/signup', passport.authenticate('local-signup', {
-        successRedirect : '/flashcard',
-        failureRedirect : '/signup',
+        successRedirect : '/japanese/flashcard',
+        failureRedirect : '/japanese/signup',
         failureFlash : true
     }));
+    */
 
     // LOGOUT
     app.get('/logout', function(req, res) {
         req.logout();
-        res.redirect('/');
+        res.redirect('/japanese/');
     });
 
     // PROFILE SECTION

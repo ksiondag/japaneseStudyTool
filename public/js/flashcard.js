@@ -19,7 +19,7 @@ window.onload = function () {
         return array;
     };
 
-    $.getJSON('/api/kanji', function (data) {
+    $.getJSON('/japanese/api/kanji', function (data) {
         var index = 0;
 
         data = shuffle(data);
@@ -36,12 +36,12 @@ window.onload = function () {
         if (data.length) {
             $('#flashcard').html(data[index].translation);
         } else {
-            $('#flashcard').html('Maybe you should add some more flashcards!');
+            $('#flashcard').html('<a href="create">Maybe you should add some more flashcards!</a>');
         }
 
         $('#success').click(function () {
             $.ajax(
-                '/api/kanji/' + data[index]._id,
+                '/japanese/api/kanji/' + data[index]._id,
                 {
                     data: {
                         remembered: true
@@ -64,7 +64,7 @@ window.onload = function () {
 
         $('#failure').click(function () {
             $.ajax(
-                '/api/kanji/' + data[index]._id,
+                '/japanese/api/kanji/' + data[index]._id,
                 {
                     method: 'PUT',
                     success: function (data) {

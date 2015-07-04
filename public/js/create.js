@@ -2,7 +2,7 @@ window.onload = function () {
     $('form').submit(function (event) {
 
         $.ajax(
-            '/api/kanji',
+            '/japanese/api/kanji',
             {
                 method: 'POST',
                 data: {

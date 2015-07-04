@@ -7,7 +7,7 @@ module.exports = function (app, middleware) {
     flashcardRouter.use(middleware);
 
     flashcardRouter.get('/', function(req, res) {
-        res.redirect('/flashcard/spaced-repetition');
+        res.redirect('/japanese/flashcard/spaced-repetition');
     });
     
     // SPACED-REPETITION SECTION
