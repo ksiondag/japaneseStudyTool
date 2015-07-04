@@ -20,6 +20,10 @@ module.exports = function (app, middleware) {
                 function (err, kanji) {
                     var message = 'Kanji updated';
                     if (err) {
+                        res.send(err);
+                    }
+
+                    if (! kanji) {
                         message = 'Kanji created';
                         kanji = new Kanji();
                     }
